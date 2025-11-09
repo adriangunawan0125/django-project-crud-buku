@@ -1,0 +1,16 @@
+<form action="{%url 'books.update' id %}" method="post">
+{% csrf_token %}
+
+  <label for="judul"> Judul Buku</label>
+  <br>
+  <input type="text" name="judul" value="{{judul}}">
+  <br>
+
+  <label for="publush">Publish</label>
+  <br>
+  <input type="date" name="publish" value="{{publish}}">
+  <hr>
+
+  <input type="submit" value="simpan">
+</form>
+<a href="{%url 'books.index' %}">kembali</a>

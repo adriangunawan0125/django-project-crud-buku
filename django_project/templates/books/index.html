@@ -1,0 +1,32 @@
+<h1>Index Buku</h1>
+<a href="{%url 'books.add'%}">Tambah Buku</a>
+<hr>
+<table border="1">
+  <tr>
+    <th>No</th>
+    <th>Judul Buku</th>
+    <th>Publish</th>
+    <th>Aksi</th>
+  </tr>
+
+  {% if book_list %}
+    {% for buku in book_list %}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{ buku.judul }}</td>
+        <td>{{ buku.publish }}</td>
+        <td>
+          <a href="{% url 'books.edit' buku.id %}">Edit</a>
+        </td>
+        <td>
+          <a onclick="return confirm('Hapus {{ buku.judul }}?')" href="{% url 'books.delete' buku.id%}">Hapus</a>
+        </td>
+
+      </tr>
+    {% endfor %}
+  {% else %}
+    <tr>
+      <td colspan="4">Tidak ada data buku.</td>
+    </tr>
+  {% endif %}
+</table>

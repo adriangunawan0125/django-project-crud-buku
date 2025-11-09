@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    {% if all_buku %}
+    <h1 class="text-center mt-5 mb-5 text-primary fw-bold">{{ title }}</h1>
+    <table class="table">
+      <thead>
+        <tr class="table-info">
+          <th scope="col" class="text-center">No</th>
+          <th scope="col" class="text-center">Judul</th>
+          <th scope="col" class="text-center">Buku</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for buku in all_buku %}
+        <tr class="table-light">
+          <td class="text-center">{{ forloop.counter }}</td>
+          <td class="text-center">{{ buku.judul}}</td>
+          <td class="text-center">{{ buku.tahun }}</td>
+        {% endfor %}
+        </tr>
+        {% else %}
+            <p>Tidak ada data buku.</p>
+          {% endif %}
+        </div>
+      
+      </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
