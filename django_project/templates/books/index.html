@@ -17,8 +17,6 @@
         <td>{{ buku.publish }}</td>
         <td>
           <a href="{% url 'books.edit' buku.id %}">Edit</a>
-        </td>
-        <td>
           <a onclick="return confirm('Hapus {{ buku.judul }}?')" href="{% url 'books.delete' buku.id%}">Hapus</a>
         </td>
 
